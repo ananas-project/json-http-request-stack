@@ -1,0 +1,21 @@
+
+
+
+
+https://www3.hostname.com:port/path/path/path/file_name?a=1&b=2#fragment
+|      |                 |    |              |         |      |\_______/
+|      |\- host-address -/    |              |         |      |    |
+|      |                      |              |         |      |  a field
+|       \- service-address --/               |         |      |  of the object
+|                                            |         |      |
+|\-------- node-address --------------------/          |      |
+|                                                      |      |
+|\-------- class-address -----------------------------/       |
+|                                                             |
+ \-------- object-address -----------------------------------/
+
+Server(host)
+Service
+Node
+Class
+Object
