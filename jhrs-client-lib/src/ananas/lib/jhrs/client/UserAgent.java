@@ -1,7 +1,8 @@
 package ananas.lib.jhrs.client;
 
-import ananas.lib.jhrs.JHRSAddressSystem;
+import ananas.lib.io.Connector;
 import ananas.lib.jhrs.ClassAddress;
+import ananas.lib.jhrs.JHRSAddressSystem;
 import ananas.lib.jhrs.NodeAddress;
 import ananas.lib.jhrs.ObjectAddress;
 
@@ -26,5 +27,7 @@ public interface UserAgent {
 	ClassEndpoint getClassEndpoint(ClassAddress cls);
 
 	NodeEndpoint getNodeEndpoint(NodeAddress node);
+
+	Connector getConnector();
 
 }

@@ -1,7 +1,8 @@
 package ananas.lib.impl.jhrs.client;
 
-import ananas.lib.jhrs.JHRSAddressSystem;
+import ananas.lib.io.Connector;
 import ananas.lib.jhrs.ClassAddress;
+import ananas.lib.jhrs.JHRSAddressSystem;
 import ananas.lib.jhrs.NodeAddress;
 import ananas.lib.jhrs.ObjectAddress;
 import ananas.lib.jhrs.client.ClassEndpoint;
@@ -35,6 +36,11 @@ public class UserAgentImpl implements UserAgent {
 	@Override
 	public NodeEndpoint getNodeEndpoint(NodeAddress node) {
 		return new NodeEndpointImpl(this, node);
+	}
+
+	@Override
+	public Connector getConnector() {
+		return Connector.Factory.getConnector();
 	}
 
 }
