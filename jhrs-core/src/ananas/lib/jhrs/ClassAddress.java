@@ -1,6 +1,6 @@
 package ananas.lib.jhrs;
 
-public interface ClassAddress extends JHRSAddressComponent {
+public interface ClassAddress extends JHRSAddress {
 
 	NodeAddress getOwnerNode();
 

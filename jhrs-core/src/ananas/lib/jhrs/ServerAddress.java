@@ -1,6 +1,6 @@
 package ananas.lib.jhrs;
 
-public interface ServerAddress extends JHRSAddressComponent {
+public interface ServerAddress extends JHRSAddress {
 
 	ServiceAddress getService(int port);
 

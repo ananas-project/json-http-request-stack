@@ -1,6 +1,6 @@
 package ananas.lib.impl.jhrs.client;
 
-import ananas.lib.jhrs.JHRSAddressComponent;
+import ananas.lib.jhrs.JHRSAddress;
 import ananas.lib.jhrs.NodeAddress;
 import ananas.lib.jhrs.client.NodeEndpoint;
 import ananas.lib.jhrs.client.UserAgent;
@@ -30,7 +30,7 @@ public class NodeEndpointImpl implements NodeEndpoint {
 	}
 
 	@Override
-	public JHRSAddressComponent getAddress() {
+	public JHRSAddress getAddress() {
 		// TODO Auto-generated method stub
 		return null;
 	}

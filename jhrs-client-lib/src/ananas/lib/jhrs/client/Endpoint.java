@@ -1,6 +1,6 @@
 package ananas.lib.jhrs.client;
 
-import ananas.lib.jhrs.JHRSAddressComponent;
+import ananas.lib.jhrs.JHRSAddress;
 
 public interface Endpoint {
 
@@ -8,6 +8,6 @@ public interface Endpoint {
 
 	String getURL();
 
-	JHRSAddressComponent getAddress();
+	JHRSAddress getAddress();
 
 }

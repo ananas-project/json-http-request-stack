@@ -2,9 +2,9 @@ package ananas.lib.jhrs.client;
 
 import ananas.lib.jhrs.ObjectAddress;
 
-public class DefaultEndpoint extends AbstractEndpoint implements ObjectEndpoint {
+public class DefaultObjectEndpoint extends AbstractEndpoint implements ObjectEndpoint {
 
-	public DefaultEndpoint(String url) {
+	public DefaultObjectEndpoint(String url) {
 		super(urlToCore(url));
 	}
 

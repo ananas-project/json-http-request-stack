@@ -4,16 +4,19 @@ import ananas.lib.jhrs.ClassAddress;
 import ananas.lib.jhrs.client.ClassEndpoint;
 import ananas.lib.jhrs.client.UserAgent;
 
-public class ClassEndpointImpl extends ObjectEndpointImpl implements
+public class ClassEndpointImpl extends InvokeableEndpointImpl implements
 		ClassEndpoint {
 
-	public ClassEndpointImpl(UserAgent agent, ClassAddress cls) {
-		super(agent, cls.getObjectByName(""));
+	private final ClassAddress mClassAddr;
+
+	public ClassEndpointImpl(UserAgent agent, ClassAddress addr) {
+		super(agent, addr);
+		this.mClassAddr = addr;
 	}
 
 	@Override
 	public ClassAddress getJHRSClass() {
-		return this.getJHRSObject().getOwnerClass();
+		return this.mClassAddr;
 	}
 
 }

@@ -1,6 +1,6 @@
 package ananas.lib.impl.jhrs;
 
-import ananas.lib.jhrs.JHRSAddressComponent;
+import ananas.lib.jhrs.JHRSAddress;
 import ananas.lib.jhrs.JHRSAddressSystem;
 import ananas.lib.jhrs.ClassAddress;
 import ananas.lib.jhrs.ObjectAddress;
@@ -24,8 +24,8 @@ public class JHRSObjectImpl implements ObjectAddress {
 	}
 
 	@Override
-	public String getAddressString() {
-		return this.mOwner.getAddressString() + this.mName;
+	public String getURL() {
+		return this.mOwner.getURL() + this.mName;
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class JHRSObjectImpl implements ObjectAddress {
 	}
 
 	@Override
-	public JHRSAddressComponent getParent() {
+	public JHRSAddress getParent() {
 		return this.mOwner;
 	}
 

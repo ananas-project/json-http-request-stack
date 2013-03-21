@@ -1,8 +1,6 @@
 package ananas.lib.jhrs.client;
 
-import java.util.Map;
-
-import ananas.lib.jhrs.JHRSAddressComponent;
+import ananas.lib.jhrs.JHRSAddress;
 import ananas.lib.json.JSONObject;
 
 public class AbstractEndpoint implements InvokeableEndpoint {
@@ -24,13 +22,13 @@ public class AbstractEndpoint implements InvokeableEndpoint {
 	}
 
 	@Override
-	public JSONObject invoke(Map<String, String> param) {
-		return this.mEp.invoke(param);
+	public JHRSAddress getAddress() {
+		return this.mEp.getAddress();
 	}
 
 	@Override
-	public JHRSAddressComponent getAddress() {
-		return this.mEp.getAddress();
+	public JSONObject invoke(ParameterList param) {
+		return this.mEp.invoke(param);
 	}
 
 }

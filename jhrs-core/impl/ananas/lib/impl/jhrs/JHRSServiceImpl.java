@@ -1,6 +1,6 @@
 package ananas.lib.impl.jhrs;
 
-import ananas.lib.jhrs.JHRSAddressComponent;
+import ananas.lib.jhrs.JHRSAddress;
 import ananas.lib.jhrs.JHRSAddressSystem;
 import ananas.lib.jhrs.NodeAddress;
 import ananas.lib.jhrs.ServerAddress;
@@ -28,9 +28,9 @@ public class JHRSServiceImpl implements ServiceAddress {
 	}
 
 	@Override
-	public String getAddressString() {
+	public String getURL() {
 		String scheme = this.mScheme;
-		String host = this.mOwner.getAddressString();
+		String host = this.mOwner.getURL();
 		int port = this.mPort;
 		String strPort;
 		if (port < 0) {
@@ -59,7 +59,7 @@ public class JHRSServiceImpl implements ServiceAddress {
 	}
 
 	@Override
-	public JHRSAddressComponent getParent() {
+	public JHRSAddress getParent() {
 		return this.mOwner;
 	}
 
