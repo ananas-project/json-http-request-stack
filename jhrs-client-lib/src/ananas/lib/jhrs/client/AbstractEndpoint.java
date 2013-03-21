@@ -2,41 +2,35 @@ package ananas.lib.jhrs.client;
 
 import java.util.Map;
 
-import ananas.lib.jhrs.JHRSObject;
+import ananas.lib.jhrs.JHRSAddressComponent;
 import ananas.lib.json.JSONObject;
 
-public class AbstractEndpoint implements ObjectEndpoint {
+public class AbstractEndpoint implements InvokeableEndpoint {
 
-	private final ObjectEndpoint mTarget;
+	private final InvokeableEndpoint mEp;
 
-	public AbstractEndpoint(ObjectEndpoint target) {
-		this.mTarget = target;
-	}
-
-	public AbstractEndpoint(String url) {
-		UserAgent agent = UserAgent.Factory.getAgent();
-		JHRSObject objAddr = agent.getAddressSystem().getObject(url);
-		this.mTarget = agent.getObjectEndpoint(objAddr);
-	}
-
-	@Override
-	public JSONObject invoke(Map<String, String> param) {
-		return this.mTarget.invoke(param);
+	public AbstractEndpoint(InvokeableEndpoint ep) {
+		this.mEp = ep;
 	}
 
 	@Override
 	public UserAgent getUserAgent() {
-		return this.mTarget.getUserAgent();
+		return this.mEp.getUserAgent();
 	}
 
 	@Override
 	public String getURL() {
-		return this.mTarget.getURL();
+		return this.mEp.getURL();
 	}
 
 	@Override
-	public JHRSObject getJHRSObject() {
-		return this.mTarget.getJHRSObject();
+	public JSONObject invoke(Map<String, String> param) {
+		return this.mEp.invoke(param);
+	}
+
+	@Override
+	public JHRSAddressComponent getAddress() {
+		return this.mEp.getAddress();
 	}
 
 }

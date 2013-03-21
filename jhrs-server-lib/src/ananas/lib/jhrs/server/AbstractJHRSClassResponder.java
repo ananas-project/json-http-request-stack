@@ -2,7 +2,7 @@ package ananas.lib.jhrs.server;
 
 import javax.servlet.http.HttpServlet;
 
-import ananas.lib.jhrs.JHRSClass;
+import ananas.lib.jhrs.ClassAddress;
 
 public class AbstractJHRSClassResponder extends HttpServlet implements JHRSClassResponder {
 
@@ -12,7 +12,7 @@ public class AbstractJHRSClassResponder extends HttpServlet implements JHRSClass
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void onInvokeStaticMethod(JHRSClass aClass, JHRSRequest request,
+	public void onInvokeStaticMethod(ClassAddress aClass, JHRSRequest request,
 			JHRSResponse response) {
 		// TODO Auto-generated method stub
 		

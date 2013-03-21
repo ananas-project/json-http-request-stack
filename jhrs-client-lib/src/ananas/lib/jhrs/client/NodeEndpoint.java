@@ -1,9 +1,9 @@
 package ananas.lib.jhrs.client;
 
-import ananas.lib.jhrs.JHRSNode;
+import ananas.lib.jhrs.NodeAddress;
 
 public interface NodeEndpoint extends Endpoint {
 
-	JHRSNode getJHRSNode();
+	NodeAddress getJHRSNode();
 
 }

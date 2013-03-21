@@ -1,12 +1,12 @@
 package ananas.lib.jhrs.server;
 
-import ananas.lib.jhrs.JHRSObject;
+import ananas.lib.jhrs.ObjectAddress;
 
 public interface JHRSObjectResponder {
 
 	JHRSObjectManager getObjectManager();
 
-	void onInvokeMethod(JHRSObject obj, JHRSRequest request,
+	void onInvokeMethod(ObjectAddress obj, JHRSRequest request,
 			JHRSResponse response);
 
 }

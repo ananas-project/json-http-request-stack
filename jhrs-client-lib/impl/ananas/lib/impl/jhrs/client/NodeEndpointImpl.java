@@ -1,12 +1,13 @@
 package ananas.lib.impl.jhrs.client;
 
-import ananas.lib.jhrs.JHRSNode;
+import ananas.lib.jhrs.JHRSAddressComponent;
+import ananas.lib.jhrs.NodeAddress;
 import ananas.lib.jhrs.client.NodeEndpoint;
 import ananas.lib.jhrs.client.UserAgent;
 
 public class NodeEndpointImpl implements NodeEndpoint {
 
-	public NodeEndpointImpl(UserAgent agent, JHRSNode node) {
+	public NodeEndpointImpl(UserAgent agent, NodeAddress node) {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -23,7 +24,13 @@ public class NodeEndpointImpl implements NodeEndpoint {
 	}
 
 	@Override
-	public JHRSNode getJHRSNode() {
+	public NodeAddress getJHRSNode() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public JHRSAddressComponent getAddress() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -2,19 +2,19 @@ package ananas.lib.impl.jhrs;
 
 import ananas.lib.jhrs.JHRSAddressComponent;
 import ananas.lib.jhrs.JHRSAddressSystem;
-import ananas.lib.jhrs.JHRSNode;
-import ananas.lib.jhrs.JHRSServer;
-import ananas.lib.jhrs.JHRSService;
+import ananas.lib.jhrs.NodeAddress;
+import ananas.lib.jhrs.ServerAddress;
+import ananas.lib.jhrs.ServiceAddress;
 
-public class JHRSServiceImpl implements JHRSService {
+public class JHRSServiceImpl implements ServiceAddress {
 
-	private final JHRSServer mOwner;
+	private final ServerAddress mOwner;
 	private final JHRSAddressSystem mAddrSys;
 	// private final URI mURI;
 	private String mScheme;
 	private int mPort;
 
-	public JHRSServiceImpl(JHRSAddressSystem addrSys, JHRSServer owner,
+	public JHRSServiceImpl(JHRSAddressSystem addrSys, ServerAddress owner,
 			String scheme, int port) {
 		this.mAddrSys = addrSys;
 		this.mOwner = owner;
@@ -42,12 +42,12 @@ public class JHRSServiceImpl implements JHRSService {
 	}
 
 	@Override
-	public JHRSServer getOwnerServer() {
+	public ServerAddress getOwnerServer() {
 		return this.mOwner;
 	}
 
 	@Override
-	public JHRSNode getNodeByName(String name) {
+	public NodeAddress getNodeByName(String name) {
 		int i1 = name.indexOf('/');
 		int i2 = name.lastIndexOf('/');
 		if (i1 >= 0 && i2 >= i1) {

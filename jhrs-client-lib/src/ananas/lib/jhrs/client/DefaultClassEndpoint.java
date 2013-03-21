@@ -1,23 +1,23 @@
 package ananas.lib.jhrs.client;
 
-import ananas.lib.jhrs.JHRSClass;
+import ananas.lib.jhrs.ClassAddress;
 
 public class DefaultClassEndpoint extends AbstractEndpoint implements
 		ClassEndpoint {
 
 	public DefaultClassEndpoint(String url) {
-		super(targetFromURL(url));
+		super(addrFromURL(url));
 	}
 
-	private static ClassEndpoint targetFromURL(String url) {
+	private static ClassEndpoint addrFromURL(String url) {
 		UserAgent agent = UserAgent.Factory.getAgent();
-		JHRSClass clsAddr = agent.getAddressSystem().getClassAddress(url);
+		ClassAddress clsAddr = agent.getAddressSystem().getClassAddress(url);
 		ClassEndpoint ep = agent.getClassEndpoint(clsAddr);
 		return ep;
 	}
 
 	@Override
-	public JHRSClass getJHRSClass() {
-		return this.getJHRSObject().getOwnerClass();
+	public ClassAddress getJHRSClass() {
+		return (ClassAddress) this.getAddress();
 	}
 }

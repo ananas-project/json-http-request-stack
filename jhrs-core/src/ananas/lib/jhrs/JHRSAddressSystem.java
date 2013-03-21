@@ -2,15 +2,15 @@ package ananas.lib.jhrs;
 
 public interface JHRSAddressSystem {
 
-	JHRSServer getServer(String address);
+	ServerAddress getServer(String address);
 
-	JHRSService getService(String address);
+	ServiceAddress getService(String address);
 
-	JHRSNode getNode(String address);
+	NodeAddress getNode(String address);
 
-	JHRSObject getObject(String address);
+	ObjectAddress getObject(String address);
 
-	JHRSClass getClassAddress(String address);
+	ClassAddress getClassAddress(String address);
 
 	class Factory {
 

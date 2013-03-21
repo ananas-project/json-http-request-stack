@@ -2,17 +2,18 @@ package ananas.lib.impl.jhrs.client;
 
 import java.util.Map;
 
-import ananas.lib.jhrs.JHRSObject;
+import ananas.lib.jhrs.JHRSAddressComponent;
+import ananas.lib.jhrs.ObjectAddress;
 import ananas.lib.jhrs.client.ObjectEndpoint;
 import ananas.lib.jhrs.client.UserAgent;
 import ananas.lib.json.JSONObject;
 
 public class ObjectEndpointImpl implements ObjectEndpoint {
 
-	private final JHRSObject mObjectAddr;
+	private final ObjectAddress mObjectAddr;
 	private final UserAgent mUserAgent;
 
-	public ObjectEndpointImpl(UserAgent ua, JHRSObject obj) {
+	public ObjectEndpointImpl(UserAgent ua, ObjectAddress obj) {
 		this.mObjectAddr = obj;
 		this.mUserAgent = ua;
 	}
@@ -28,7 +29,12 @@ public class ObjectEndpointImpl implements ObjectEndpoint {
 	}
 
 	@Override
-	public JHRSObject getJHRSObject() {
+	public ObjectAddress getJHRSObject() {
+		return this.mObjectAddr;
+	}
+
+	@Override
+	public JHRSAddressComponent getAddress() {
 		return this.mObjectAddr;
 	}
 

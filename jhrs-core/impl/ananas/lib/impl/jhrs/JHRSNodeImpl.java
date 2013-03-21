@@ -2,17 +2,17 @@ package ananas.lib.impl.jhrs;
 
 import ananas.lib.jhrs.JHRSAddressComponent;
 import ananas.lib.jhrs.JHRSAddressSystem;
-import ananas.lib.jhrs.JHRSClass;
-import ananas.lib.jhrs.JHRSNode;
-import ananas.lib.jhrs.JHRSService;
+import ananas.lib.jhrs.ClassAddress;
+import ananas.lib.jhrs.NodeAddress;
+import ananas.lib.jhrs.ServiceAddress;
 
-public class JHRSNodeImpl implements JHRSNode {
+public class JHRSNodeImpl implements NodeAddress {
 
 	private final JHRSAddressSystem mAddrSys;
-	private final JHRSService mOwner;
+	private final ServiceAddress mOwner;
 	private final String mName;
 
-	public JHRSNodeImpl(JHRSAddressSystem addrSys, JHRSService owner,
+	public JHRSNodeImpl(JHRSAddressSystem addrSys, ServiceAddress owner,
 			String name) {
 		this.mAddrSys = addrSys;
 		this.mOwner = owner;
@@ -30,12 +30,12 @@ public class JHRSNodeImpl implements JHRSNode {
 	}
 
 	@Override
-	public JHRSService getOwnerService() {
+	public ServiceAddress getOwnerService() {
 		return this.mOwner;
 	}
 
 	@Override
-	public JHRSClass getClassByName(String name) {
+	public ClassAddress getClassByName(String name) {
 		return new JHRSClassImpl(this.mAddrSys, this, name);
 	}
 

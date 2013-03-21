@@ -1,6 +1,6 @@
 package ananas.lib.jhrs.server;
 
-import ananas.lib.jhrs.JHRSObject;
+import ananas.lib.jhrs.ObjectAddress;
 
 
 public class AbstractJHRSObjectResponder extends AbstractJHRSClassResponder implements
@@ -18,7 +18,7 @@ public class AbstractJHRSObjectResponder extends AbstractJHRSClassResponder impl
 	}
 
 	@Override
-	public void onInvokeMethod(JHRSObject obj, JHRSRequest request,
+	public void onInvokeMethod(ObjectAddress obj, JHRSRequest request,
 			JHRSResponse response) {
 		// TODO Auto-generated method stub
 		

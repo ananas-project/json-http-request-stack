@@ -2,10 +2,10 @@ package ananas.lib.impl.jhrs;
 
 import ananas.lib.jhrs.JHRSAddressComponent;
 import ananas.lib.jhrs.JHRSAddressSystem;
-import ananas.lib.jhrs.JHRSServer;
-import ananas.lib.jhrs.JHRSService;
+import ananas.lib.jhrs.ServerAddress;
+import ananas.lib.jhrs.ServiceAddress;
 
-public class JHRSServerImpl implements JHRSServer {
+public class JHRSServerImpl implements ServerAddress {
 
 	private final JHRSAddressSystem mAddrSys;
 	private final String mHost;
@@ -26,19 +26,19 @@ public class JHRSServerImpl implements JHRSServer {
 	}
 
 	@Override
-	public JHRSService getService(int port) {
+	public ServiceAddress getService(int port) {
 		String scheme = null;
 		return this.getService(scheme, port);
 	}
 
 	@Override
-	public JHRSService getService(String scheme) {
+	public ServiceAddress getService(String scheme) {
 		int port = -1;
 		return this.getService(scheme, port);
 	}
 
 	@Override
-	public JHRSService getService(String scheme, int port) {
+	public ServiceAddress getService(String scheme, int port) {
 		return new JHRSServiceImpl(this.mAddrSys, this, scheme, port);
 	}
 

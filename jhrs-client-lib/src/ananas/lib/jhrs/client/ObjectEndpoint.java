@@ -1,9 +1,9 @@
 package ananas.lib.jhrs.client;
 
-import ananas.lib.jhrs.JHRSObject;
+import ananas.lib.jhrs.ObjectAddress;
 
-public interface ObjectEndpoint extends Invokable, Endpoint {
+public interface ObjectEndpoint extends InvokeableEndpoint {
 
-	JHRSObject getJHRSObject();
+	ObjectAddress getJHRSObject();
 
 }
