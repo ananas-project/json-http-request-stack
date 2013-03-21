@@ -1,10 +1,6 @@
 package ananas.lib.jhrs;
 
-public interface JHRSServer {
-
-	String getHostName();
-
-	String getServerAddressString();
+public interface JHRSServer extends JHRSAddressComponent {
 
 	JHRSService getService(int port);
 

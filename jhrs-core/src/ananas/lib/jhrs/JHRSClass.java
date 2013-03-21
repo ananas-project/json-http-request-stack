@@ -1,10 +1,8 @@
 package ananas.lib.jhrs;
 
-public interface JHRSClass {
+public interface JHRSClass extends JHRSObject {
 
 	JHRSNode getOwnerNode();
-
-	String getClassAddressString();
 
 	JHRSObject getObjectByName(String name);
 

@@ -1,10 +1,8 @@
 package ananas.lib.jhrs;
 
-public interface JHRSService {
+public interface JHRSService extends JHRSAddressComponent {
 
 	JHRSServer getOwnerServer();
-
-	String getServiceAddressString();
 
 	JHRSNode getNodeByName(String name);
 
